@@ -16,11 +16,11 @@ require.config({
   }
 });
 
-require(['marionette', 'bootstrap'], function(Marionette) {
-  var app;
-  app = new Marionette.Application();
-  app.on('start', function() {
-    return console.log('app start');
+require(['models/memo', 'bootstrap'], function(Memo) {
+  var memo;
+  memo = new Memo({
+    title: 'hoge',
+    content: 'fuga'
   });
-  app.start();
+  console.log(memo);
 });

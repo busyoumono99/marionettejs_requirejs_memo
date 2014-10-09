@@ -14,11 +14,10 @@ require.config
 			exports: 'Bootstrap'
 
 require [
-	'marionette'
+	'models/memo'
 	'bootstrap'
-], (Marionette) ->
-	app = new Marionette.Application()
-	app.on 'start', ->
-		console.log 'app start'
-	app.start()
+], (Memo) ->
+	memo = new Memo({title: 'hoge', content: 'fuga'})
+	console.log memo
+
 	return
