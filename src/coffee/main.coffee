@@ -14,10 +14,12 @@ require.config
 			exports: 'Bootstrap'
 
 require [
-	'models/memo'
+	'collections/memoList'
 	'bootstrap'
-], (Memo) ->
-	memo = new Memo({title: 'hoge', content: 'fuga'})
-	console.log memo
+], (MemoList) ->
+	memoList = new MemoList()
+	memoList.fetch().done( ->
+		console.log memoList
+	)
 
 	return

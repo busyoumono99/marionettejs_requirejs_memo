@@ -16,11 +16,10 @@ require.config({
   }
 });
 
-require(['models/memo', 'bootstrap'], function(Memo) {
-  var memo;
-  memo = new Memo({
-    title: 'hoge',
-    content: 'fuga'
+require(['collections/memoList', 'bootstrap'], function(MemoList) {
+  var memoList;
+  memoList = new MemoList();
+  memoList.fetch().done(function() {
+    return console.log(memoList);
   });
-  console.log(memo);
 });
