@@ -1,0 +1,16 @@
+form#editForm.form-horizontal(role='form')
+  .form-group
+    label.col-sm-2.control-label(for='js-title') Title
+    .col-sm-9
+      input#js-title.form-control(type='text', placeholder='Title', value!='<%= title %>')
+  .form-group
+    label.col-sm-2.control-label(for='js-content') Content
+    .col-sm-9
+      input#js-content.form-control(type='text', placeholder='Content', value!="<%= content %>")
+  .form-group
+    .col-sm-offset-4.col-sm-8
+      .btn-group
+        button#saveBtn.btn.btn-primary(type='button')
+          span.glyphicon.glyphicon-floppy-disk  Save
+        button#cancelBtn.btn.btn-default(type='button')
+          span.glyphicon.glyphicon-eject  Cancel

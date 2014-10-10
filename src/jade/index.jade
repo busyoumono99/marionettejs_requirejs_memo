@@ -27,22 +27,7 @@ html(lang="ja")
       // /.navbar-collapse
     // /.container-fluid
   div.container
-    form#editForm.form-horizontal(role='form', style="display:none;")
-      .form-group
-        label.col-sm-2.control-label(for='js-title') Title
-        .col-sm-9
-          input#js-title.form-control(type='text', placeholder='Title')
-      .form-group
-        label.col-sm-2.control-label(for='js-content') Content
-        .col-sm-9
-          input#js-content.form-control(type='text', placeholder='Content')
-      .form-group
-        .col-sm-offset-4.col-sm-8
-          .btn-group
-            button#saveBtn.btn.btn-primary(type='button')
-              span.glyphicon.glyphicon-floppy-disk  Save
-            button#cancelBtn.btn.btn-default(type='button')
-              span.glyphicon.glyphicon-eject  Cancel
+    div#edit-container
     table#memoList.table.table-hover.table-bordered
       tr
         th.col-sm-2 Title

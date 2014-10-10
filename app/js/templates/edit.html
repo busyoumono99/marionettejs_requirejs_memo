@@ -1,0 +1,23 @@
+
+<form id="editForm" role="form" class="form-horizontal">
+  <div class="form-group">
+    <label for="js-title" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-9">
+      <input id="js-title" type="text" placeholder="Title" value="<%= title %>" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="js-content" class="col-sm-2 control-label">Content</label>
+    <div class="col-sm-9">
+      <input id="js-content" type="text" placeholder="Content" value="<%= content %>" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-8">
+      <div class="btn-group">
+        <button id="saveBtn" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"> Save</span></button>
+        <button id="cancelBtn" type="button" class="btn btn-default"><span class="glyphicon glyphicon-eject"> Cancel</span></button>
+      </div>
+    </div>
+  </div>
+</form>
