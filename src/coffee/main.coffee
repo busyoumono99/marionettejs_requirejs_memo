@@ -14,12 +14,9 @@ require.config
 			exports: 'Bootstrap'
 
 require [
-	'collections/memoList'
+	'app'
 	'bootstrap'
-], (MemoList) ->
-	memoList = new MemoList()
-	memoList.fetch().done( ->
-		console.log memoList
-	)
+], (app) ->
+	app.start()
 
 	return
