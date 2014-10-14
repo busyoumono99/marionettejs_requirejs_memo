@@ -17,7 +17,7 @@
         <!-- Collect the nav links, forms, and other content for toggling-->
         <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="create btn btn-default"><span class="glyphicon glyphicon-plus"></span></a></li>
+            <li><a href="#/create" class="create btn btn-default"><span class="glyphicon glyphicon-plus"></span></a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse-->
@@ -26,13 +26,15 @@
     </nav>
     <div class="container">
       <div id="edit-container"></div>
-      <table id="memoList" class="table table-hover table-bordered">
-        <tr>
-          <th class="col-sm-2">Title</th>
-          <th class="col-sm-9">Content</th>
-          <th class="col-sm-1">Func</th>
-        </tr>
-      </table>
+      <div id="main">
+        <table id="memoList" class="table table-hover table-bordered">
+          <tr>
+            <th class="col-sm-2">Title</th>
+            <th class="col-sm-9">Content</th>
+            <th class="col-sm-1">Func</th>
+          </tr>
+        </table>
+      </div>
     </div>
     <script type="text/javascript" src="bower_components/requirejs/require.js" data-main="js/main"></script>
   </body>

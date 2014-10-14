@@ -22,17 +22,18 @@ html(lang="ja")
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
           li
-            a.create.btn.btn-default(href="#")
+            a.create.btn.btn-default(href="#/create")
               span.glyphicon.glyphicon-plus
       // /.navbar-collapse
     // /.container-fluid
   div.container
     div#edit-container
-    table#memoList.table.table-hover.table-bordered
-      tr
-        th.col-sm-2 Title
-        th.col-sm-9 Content
-        th.col-sm-1 Func
+    div#main
+      table#memoList.table.table-hover.table-bordered
+        tr
+          th.col-sm-2 Title
+          th.col-sm-9 Content
+          th.col-sm-1 Func
 
 
   script(type="text/javascript", src="bower_components/requirejs/require.js", data-main="js/main")
