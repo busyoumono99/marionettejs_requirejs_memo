@@ -21,6 +21,7 @@ define [
 	app = new MemoApp()
 	app.addRegions {
 		main: '#main'
+		edit: '#edit-container'
 	}
 
 	app.on 'start', ->

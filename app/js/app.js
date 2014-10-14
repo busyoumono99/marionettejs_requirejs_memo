@@ -14,7 +14,8 @@ define(['backbone', 'marionette', 'router/index', 'controllers/index', 'collecti
   });
   app = new MemoApp();
   app.addRegions({
-    main: '#main'
+    main: '#main',
+    edit: '#edit-container'
   });
   app.on('start', function() {
     Backbone.history.start();

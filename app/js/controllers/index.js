@@ -1,4 +1,4 @@
-define(['marionette', 'require', 'collections/memoList', 'views/listView'], function(Marionette, require, MemoList, ListView) {
+define(['marionette', 'require', 'models/memo', 'collections/memoList', 'views/listView', 'views/editView'], function(Marionette, require, Memo, MemoList, ListView, EditView) {
   'use strict';
   var Controller;
   Controller = Marionette.Controller.extend({
@@ -15,13 +15,26 @@ define(['marionette', 'require', 'collections/memoList', 'views/listView'], func
       });
       this.getApp().main.show(memoListView);
     },
-    home: function() {},
-    add: function() {},
+    home: function() {
+      this.getApp().edit.empty();
+    },
+    add: function() {
+      var editView, memo;
+      memo = new Memo(null, {
+        collection: this.getApp().memoList
+      });
+      editView = new EditView({
+        model: memo
+      });
+      this.getApp().edit.show(editView);
+    },
     edit: function(id) {
-      var memo;
+      var editView, memo;
       memo = this.getApp().memoList.get(id);
-      console.log(this.getApp().memoList.length);
-      console.log(memo);
+      editView = new EditView({
+        model: memo
+      });
+      this.getApp().edit.show(editView);
     }
   });
   return Controller;
