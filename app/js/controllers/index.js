@@ -30,6 +30,7 @@ define(['marionette', 'require', 'models/memo', 'collections/memoList', 'views/l
     },
     edit: function(id) {
       var editView, memo;
+      console.log(this.getApp().memoList.length);
       memo = this.getApp().memoList.get(id);
       editView = new EditView({
         model: memo

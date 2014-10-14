@@ -16,6 +16,11 @@ require.config({
   }
 });
 
-require(['app', 'bootstrap'], function(app) {
-  app.start();
+require(['app', 'collections/memoList', 'bootstrap'], function(app, MemoList) {
+  var list;
+  list = new MemoList();
+  list.fetch().done(function() {
+    app.setMemoList(list);
+    return app.start();
+  });
 });

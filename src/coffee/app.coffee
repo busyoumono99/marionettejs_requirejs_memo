@@ -7,16 +7,25 @@ define [
 ], (Backbone, Marionette, Router, Controller, MemoList) ->
 	'use strict'
 
-	ctr = new Controller()
 	MemoApp = Marionette.Application.extend
 		initialize: (options) ->
 			console.log options
-			@memoList = new MemoList()
-			@memoList.fetch()
+			# @setRouter()
+			@ctr = new Controller()
 			@router = new Router {
-				controller: ctr
+				controller: @ctr
 			}
 			return
+		setMemoList: (list) ->
+			@memoList = list
+			return
+
+		# setRouter: ->
+		# 	@ctr = new Controller()
+		# 	@router = new Router {
+		# 		controller: @ctr
+		# 	}
+		# 	return
 
 	app = new MemoApp()
 	app.addRegions {
@@ -26,9 +35,7 @@ define [
 
 	app.on 'start', ->
 		Backbone.history.start()
-		console.log app
-		ctr.start({memoList: app.memoList})
-		# console.log(Window.app.memoList.add({title:'test1', content:'test1', id:100}));
+		app.ctr.start({memoList: app.memoList})
 		return
 
 	Window.app = app

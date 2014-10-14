@@ -35,6 +35,7 @@ define [
 			@getApp().edit.show editView
 			return
 		edit: (id) ->
+			console.log @getApp().memoList.length
 			memo = @getApp().memoList.get(id)
 			editView = new EditView {
 				model: memo
