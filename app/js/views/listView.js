@@ -5,7 +5,6 @@ define(['marionette', 'views/memoView'], function(Marionette, MemoView) {
     el: '#memoList',
     childView: MemoView,
     initialize: function() {
-      this.collection.fetch();
       this.render();
     }
   });

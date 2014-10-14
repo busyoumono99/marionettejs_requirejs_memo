@@ -4,31 +4,30 @@ define [
 	'router/index'
 	'controllers/index'
 	'collections/memoList'
-	'views/listView'
-], (Backbone, Marionette, Router, Controller, MemoList, ListView) ->
+], (Backbone, Marionette, Router, Controller, MemoList) ->
 	'use strict'
 
+	ctr = new Controller()
 	MemoApp = Marionette.Application.extend
 		initialize: (options) ->
 			console.log options
+			@memoList = new MemoList()
+			@memoList.fetch()
 			@router = new Router {
-				controller: new Controller()
+				controller: ctr
 			}
-			@collection = new MemoList()
-			@listView = new ListView({
-				collection: @collection
-			})
 			return
 
 	app = new MemoApp()
+	app.addRegions {
+		main: '#main'
+	}
 
 	app.on 'start', ->
 		Backbone.history.start()
-		console.log app.collection
-		console.log app.listView
-		# Window.app.collection.add({title:'test1', content:'test1'});
-		# memo_test1 = Window.app.collection.at(0);
-		# memo_test1.destroy();
+		console.log app
+		ctr.start({memoList: app.memoList})
+		# console.log(Window.app.memoList.add({title:'test1', content:'test1', id:100}));
 		return
 
 	Window.app = app

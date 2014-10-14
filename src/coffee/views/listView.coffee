@@ -8,7 +8,6 @@ define [
 		el: '#memoList'
 		childView: MemoView
 		initialize: ->
-			@collection.fetch()
 			@render()
 			return
 	ListView
