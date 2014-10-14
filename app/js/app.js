@@ -4,13 +4,15 @@ define(['backbone', 'marionette', 'router/index', 'controllers/index', 'collecti
   MemoApp = Marionette.Application.extend({
     initialize: function(options) {
       console.log(options);
+    },
+    setMemoList: function(list) {
+      this.memoList = list;
+    },
+    setRouter: function() {
       this.ctr = new Controller();
       this.router = new Router({
         controller: this.ctr
       });
-    },
-    setMemoList: function(list) {
-      this.memoList = list;
     }
   });
   app = new MemoApp();
@@ -19,9 +21,13 @@ define(['backbone', 'marionette', 'router/index', 'controllers/index', 'collecti
     edit: '#edit-container'
   });
   app.on('start', function() {
-    Backbone.history.start();
-    app.ctr.start({
-      memoList: app.memoList
+    app.setRouter();
+    app.setMemoList(new MemoList());
+    app.memoList.fetch().done(function() {
+      app.ctr.start({
+        memoList: app.memoList
+      });
+      Backbone.history.start();
     });
   });
   return Window.app = app;

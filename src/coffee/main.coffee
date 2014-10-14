@@ -15,13 +15,8 @@ require.config
 
 require [
 	'app'
-	'collections/memoList'
 	'bootstrap'
-], (app, MemoList) ->
-	list = new MemoList()
-	list.fetch().done(->
-		app.setMemoList(list)
-		app.start()
-	)
+], (app) ->
+	app.start()
 
 	return
