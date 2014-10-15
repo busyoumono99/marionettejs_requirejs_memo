@@ -16,7 +16,7 @@ define(['marionette', 'require', 'models/memo', 'collections/memoList', 'views/l
       this.getApp().main.show(memoListView);
     },
     home: function() {
-      this.getApp().edit.empty();
+      this.getApp().edit.close();
     },
     add: function() {
       var editView, memo;

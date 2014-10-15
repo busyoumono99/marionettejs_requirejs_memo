@@ -23,7 +23,7 @@ define [
 			return
 
 		home: ->
-			@getApp().edit.empty()
+			@getApp().edit.close()
 			return
 		add: ->
 			memo = new Memo(null, {
